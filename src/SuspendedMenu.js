@@ -39,6 +39,7 @@ const SuspendMenu = props => {
   useEffect(() => {
     function handleMouseMove(e) {
       const { isDragging, position } = refContainer.current;
+      // console.log('======>>> isEditMode: ', isEditMode())
       if (isDragging) {
         e.preventDefault();
         e.stopPropagation();
