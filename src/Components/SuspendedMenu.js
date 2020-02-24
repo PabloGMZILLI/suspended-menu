@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
-import "./styles.css";
+import "./Components.css";
+import { Link } from 'react-router-dom'
 
 const normalizePosition = () => {
   let x = 50;
@@ -20,9 +21,6 @@ const SuspendMenu = ({
   isEditMode,
   ...props
 }) => {
-  console.log('name =>', name)
-  console.log('href =>', href)
-  console.log('isEditMode', isEditMode)
   const [position, setPosition] = useState(normalizePosition());
   const [isDragging, setIsDragging] = useState(false);
   const refContainer = useRef(null);
@@ -33,9 +31,9 @@ const SuspendMenu = ({
         left: position[0],
         top: position[1]
       }}
-      // onMouseDown={() => setIsDragging(true)}
+      onMouseDown={() => isEditMode ? setIsDragging(true) : undefined }
     >
-      <a href={href}>{ name || props.children }</a>
+      <Link to={href || '/'} >{ name || props.children }</Link>      
     </div>
   );
   useEffect(() => {
@@ -47,7 +45,6 @@ const SuspendMenu = ({
   useEffect(() => {
     function handleMouseMove(e) {
       const { isDragging, position } = refContainer.current;
-      // console.log('======>>> isEditMode: ', isEditMode())
       if (isDragging && isEditMode) {
         e.preventDefault();
         e.stopPropagation();

@@ -1,5 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
-import "./styles.css";
+import React from "react";
 
 const SettingsPage = () => {
     const onChange = event =>{
@@ -23,8 +22,4 @@ const SettingsPage = () => {
     </div>
   );
 };
-{/* <div>
-      <input type="checkbox" id="editSuspendedMenu" name="editSuspendedMenu" value={false} />
-      <label for="editSuspendedMenu">Set Menu Position Buttons</label>
-    </div> */}
 export default SettingsPage;
