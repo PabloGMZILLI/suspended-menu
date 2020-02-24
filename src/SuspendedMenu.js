@@ -14,7 +14,15 @@ const normalizePosition = () => {
   return [x, y];
 };
 
-const SuspendMenu = props => {
+const SuspendMenu = ({
+  name,
+  href,
+  isEditMode,
+  ...props
+}) => {
+  console.log('name =>', name)
+  console.log('href =>', href)
+  console.log('isEditMode', isEditMode)
   const [position, setPosition] = useState(normalizePosition());
   const [isDragging, setIsDragging] = useState(false);
   const refContainer = useRef(null);
@@ -25,9 +33,9 @@ const SuspendMenu = props => {
         left: position[0],
         top: position[1]
       }}
-      onMouseDown={() => setIsDragging(true)}
+      // onMouseDown={() => setIsDragging(true)}
     >
-      <a href="/main">{props.children}</a>
+      <a href={href}>{ name || props.children }</a>
     </div>
   );
   useEffect(() => {
@@ -40,7 +48,7 @@ const SuspendMenu = props => {
     function handleMouseMove(e) {
       const { isDragging, position } = refContainer.current;
       // console.log('======>>> isEditMode: ', isEditMode())
-      if (isDragging) {
+      if (isDragging && isEditMode) {
         e.preventDefault();
         e.stopPropagation();
         const newX = position[0] + e.movementX;

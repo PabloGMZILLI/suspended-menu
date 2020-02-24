@@ -7,7 +7,7 @@ const SettingsPage = () => {
     };
   return (
     <div>
-      <h1>MyForm</h1>
+      <h1>Settings</h1>
       <div className="checkbox">
         <label>
           <input
