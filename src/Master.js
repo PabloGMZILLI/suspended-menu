@@ -9,12 +9,12 @@ const Master = ( {
         <SuspendedMenu
          name='Main'
          href='/'
-         isEditMode={ true }
+         isEditMode={ false }
         />
         <SuspendedMenu
             name='Perfil'
             href='/perfil'
-            isEditMode={ true }
+            isEditMode={ false }
         />
         <SuspendedMenu
             name='Settings'
