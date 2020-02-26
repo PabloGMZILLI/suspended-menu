@@ -1,14 +1,27 @@
 import React from 'react'
-import SuspendMenu from './Components/SuspendedMenu'
+import SuspendedMenu from './Components/SuspendedMenu'
 
 const Master = ( {
-    component   
+    ...props  
 }) => {
-    console.log('====>', component)
     return (
         <>
-            <SuspendMenu>Menu</SuspendMenu>
-            { component }
+        <SuspendedMenu
+         name='Main'
+         href='/'
+         isEditMode={ true }
+        />
+        <SuspendedMenu
+            name='Perfil'
+            href='/perfil'
+            isEditMode={ true }
+        />
+        <SuspendedMenu
+            name='Settings'
+            href='/settings'
+            isEditMode={ false }
+        />
+        { props.children }
         </>
     )
 }

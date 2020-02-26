@@ -1,11 +1,12 @@
 import React from "react";
+import './SettingsPage.css'
 
 const SettingsPage = () => {
     const onChange = event =>{
         localStorage.setItem("editMode", JSON.stringify( { "editSuspendedMenu" : event.target.checked }));
     };
   return (
-    <div>
+    <div className='settings-page'>
       <h1>Settings</h1>
       <div className="checkbox">
         <label>

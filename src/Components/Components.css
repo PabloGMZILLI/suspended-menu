@@ -18,6 +18,8 @@
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 5px 5px 10px #c0c0c0;
+    font-family: sans-serif;
+    text-align: center;
     /* transform: translateX(-10px); */
   }
   

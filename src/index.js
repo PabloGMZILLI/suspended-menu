@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { LastLocationProvider } from 'react-router-last-location';
 import {
-    BrowserRouter,
+    BrowserRouter as Router,
     Switch,
-    Route,
-} from 'react-router-dom'
+    Route
+} from 'react-router-dom';
 
 
 import App from "./App";
@@ -15,11 +16,13 @@ import ErrorPage from "./Pages/ErrorPage/ErrorPage";
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
-    <BrowserRouter >
-        <Switch >
-            <Route exact path='/' component={ App }/> 
-            <Route exact path='/settings' component={ SettingsPage  }/>
-            <Route exact path='*' component={ ErrorPage  }/>
-        </Switch>
-    </BrowserRouter>
+    <Router >
+        <LastLocationProvider>
+            <Switch >
+                <Route exact path='/'><Master><App/></Master></Route> 
+                <Route exact path='/settings'><Master><SettingsPage/></Master></Route>
+                <Route exact path='*' component={ ErrorPage }/>
+            </Switch>
+        </LastLocationProvider>
+    </Router>
     , rootElement);

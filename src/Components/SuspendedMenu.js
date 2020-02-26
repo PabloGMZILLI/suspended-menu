@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./Components.css";
-import { Link } from 'react-router-dom'
+import { Link, Redirect, useHistory } from 'react-router-dom'
 
 const normalizePosition = () => {
   let x = 50;
@@ -24,6 +24,8 @@ const SuspendMenu = ({
   const [position, setPosition] = useState(normalizePosition());
   const [isDragging, setIsDragging] = useState(false);
   const refContainer = useRef(null);
+  const history = useHistory()
+  const handleClick = ({href}) => history.push(href)
   const SuspendMenuContent = props => (
     <div
       className="suspended-menu"
@@ -31,7 +33,7 @@ const SuspendMenu = ({
         left: position[0],
         top: position[1]
       }}
-      onMouseDown={() => isEditMode ? setIsDragging(true) : undefined }
+      onMouseDown={() => isEditMode ? setIsDragging(true) : console.log('======>>> handleClick(href): ') }
     >
       <Link to={href || '/'} >{ name || props.children }</Link>      
     </div>
