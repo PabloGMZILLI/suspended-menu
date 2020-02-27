@@ -26,5 +26,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "moduleNameMapper": {
+    "^app(.*)$": "<rootDir>/src$1",
+    "^@config(.*)$": "<rootDir>/src/config$1",
+    "^@pages(.*)$": "<rootDir>/src/pages$1"
+  }
 }

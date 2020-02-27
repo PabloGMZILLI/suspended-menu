@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./Components.css";
-import { Link, Redirect, useHistory } from 'react-router-dom'
-import { history } from '../router/history';
+import { Link, useHistory } from 'react-router-dom'
+
 
 const normalizePosition = () => {
   let x = 50;

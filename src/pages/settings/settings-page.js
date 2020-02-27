@@ -1,5 +1,5 @@
 import React from "react";
-import './SettingsPage.css'
+import './settings-page.css'
 
 const SettingsPage = () => {
     const onChange = event =>{

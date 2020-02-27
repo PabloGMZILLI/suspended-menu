@@ -1,5 +1,5 @@
 import React from 'react'
-import SuspendedMenu from './Components/SuspendedMenu'
+import SuspendedMenu from './components/SuspendedMenu'
 
 const Master = ( {
     ...props  
