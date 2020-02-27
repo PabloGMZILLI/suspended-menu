@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import "./Components.css";
+import "./SuspendedMenu.css";
 import { Link, useHistory } from 'react-router-dom'
 
 

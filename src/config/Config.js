@@ -1,19 +1,19 @@
 import React, { useEffect } from 'react';
 import Routes from './Routes';
 
-import Page from 'app/components/Page';
+import PageStructure from '/home/pablo.zilli/Desktop/studies/suspended-menu/src/components/PageStructure';
 
 const Config = () => {
 
-    useEffect(() => {
+    // useEffect(() => {
     //   setPreviousUrl(window.location.href);
-    });
+    // });
 
     return  (
-        <Page>
+        <PageStructure>
           {/* <MetaTagsContainer /> */}
           <Routes/>
-        </Page>
+        </PageStructure>
       );
   }
 

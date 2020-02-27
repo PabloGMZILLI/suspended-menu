@@ -1,17 +1,18 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { LastLocationProvider } from 'react-router-last-location';
 import {
     Switch,
     Route
 } from 'react-router-dom';
 
-import SettingsPage from "@pages/settings";
-import PageNotFound from "@pages/error";
-import HomePage from '@pages/home'
+import './styles.css'
+
+const SettingsPage = lazy(() => import('../pages/settings' /* webpackChunkName: 'search' */));
+const PageNotFound = lazy(() => import('../pages/error' /* webpackChunkName: 'search' */));
+const HomePage = lazy(() => import('../pages/home' /* webpackChunkName: 'search' */));
 
 const LoadingArea = () => <h1>Carregando...</h1>
 const Routes = () => {
-
     return (
         <Suspense fallback={<LoadingArea />}>
             <LastLocationProvider>
