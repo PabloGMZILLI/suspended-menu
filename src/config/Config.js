@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Routes from './Routes';
 
-import PageStructure from '/home/pablo.zilli/Desktop/studies/suspended-menu/src/components/PageStructure';
+import PageStructure from '../components/PageStructure';
 
 const Config = () => {
 
